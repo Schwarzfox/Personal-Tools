@@ -8,3 +8,5 @@ print(round(3.5))
 
 from math import *
 print(floor(2.9))
+print(ceil(2.9))
+print(sqrt(20))
