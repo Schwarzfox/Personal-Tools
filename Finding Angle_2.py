@@ -2,8 +2,8 @@ import itertools as it
 import numpy as np
 import vg
 
-vector1 = np.array([1,1,5])
-vector2 = np.array([-1,-1,2])
+vector1 = np.array([1,1,1])
+vector2 = np.array([1,2,3])
 
 def vector_variants(vector):
     pairs = [[i, -i] for i in vector]
@@ -12,5 +12,11 @@ def vector_variants(vector):
 v1_variants = vector_variants(vector1)
 v2_variants = vector_variants(vector2)
 
-combos = np.array(it.product(v1_variants, v2_variants))
-angles = [vg.angle(item[0], item[1]) for item in combos]
+combos = list(it.product(v1_variants, v2_variants))
+angles = [vg.angle(np.array(item[0]), np.array(item[1])) for item in combos]
+
+import pandas as pd
+
+df = pd.DataFrame([(item[0], item[1], vg.angle(np.array(item[0]), np.array(item[1])))
+                   for item in combos],columns=['v1', 'v2','angle'])
+print(df)

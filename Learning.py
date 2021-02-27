@@ -38,26 +38,52 @@ print(my_list.count(6))  # Counts how mnay 6 we have
 my_list.reverse()
 print(my_list)
 
-
 ###Functions###
 print ("F U N C T I O N S :")
+
+
 def say_hi(name, age):
     print("Hello " + name + "! You are " + str(age) + " years old!")
-    return age            #return actually breaks the function
+    return age  # return actually breaks the function
+
 
 say_hi("Seti", 30)
-my_age= say_hi("seti",2)
+my_age = say_hi("seti", 2)
 print(my_age)
-
 
 ###IF###
 print("I F :")
-user_age=15
-if user_age<10:
-    print("you are a kid")
-elif user_age<18:
+# user_age= float(raw_input("Enter your age here:"))
+user_age = 5
+if 10 > user_age:
+    print("you are a kiddo")
+elif 18 > user_age:
     print("you are a teenager")
 else:
-    print("you are an audlt")
+    print("you are an adult")
 
+###Dictionary###
+print("D I C T I O N A R Y :")
+MonthConverstions = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December",
+}
+print(MonthConverstions.get(7))
 
+###While###
+print("W H I L E :")
+i = 1
+while i <= 4:
+    print (i * 7)
+    i += 1
+print("Loop has finished!")
